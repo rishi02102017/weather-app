@@ -155,9 +155,16 @@ if location:
 
 st.subheader("🎥 YouTube Video About the City")
 yt_fallback = {
-    "Mumbai": "https://www.youtube.com/embed/Fn2geO9n18I",
-    "New York": "https://www.youtube.com/embed/hTbpV1mxQW8",
-    "Tokyo": "https://www.youtube.com/embed/IbRti4qaL3Q",
+    "Delhi": "https://www.youtube.com/embed/uN4WCEpYQTo",
+    "Mumbai": "https://www.youtube.com/embed/hLQtnzN1QkQ",
+    "New York": "https://www.youtube.com/embed/VpT_M1kWf-0",
+    "London": "https://www.youtube.com/embed/vEfRkD98FCk",
+    "Tokyo": "https://www.youtube.com/embed/CYGHxf_XjuA",
+    "Paris": "https://www.youtube.com/embed/6GV4N4wF7K8",
+    "Dubai": "https://www.youtube.com/embed/rRxW2a2GVlA",
+    "Singapore": "https://www.youtube.com/embed/iMiJFSK3xiE",
+    "Bangkok": "https://www.youtube.com/embed/TGm7skVOpNo",
+    "Sydney": "https://www.youtube.com/embed/ExQ2BL-LVKc"
 }
 yt_url = yt_fallback.get(location, "https://www.youtube.com/embed/dQw4w9WgXcQ")
 st.components.v1.iframe(yt_url, height=400)
