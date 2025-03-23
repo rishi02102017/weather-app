@@ -145,13 +145,22 @@ if st.button("Run"):
 
 st.subheader("📍 Google Maps View")
 if location:
-    map_url = f"https://www.google.com/maps/embed/v1/place?key=AIzaSyCK9bGuJ_aU0zdF8AiTWzAXuG6k5ZqRNUg&q={location}"
-    st.components.v1.iframe(map_url, width=700, height=400)
+    map_query = location.replace(" ", "+")
+    st.markdown(f"#### 📍 Map View for {location}")
+    st.components.v1.iframe(
+        f"https://maps.google.com/maps?q={map_query}&t=&z=13&ie=UTF8&iwloc=&output=embed",
+        width=700,
+        height=400,
+    )
 
 st.subheader("🎥 YouTube Video About the City")
-yt_query = location + " weather travel"
-yt_embed_url = f"https://www.youtube.com/embed?listType=search&list={yt_query.replace(' ', '%20')}"
-st.components.v1.iframe(yt_embed_url, height=400)
+yt_fallback = {
+    "Mumbai": "https://www.youtube.com/embed/Fn2geO9n18I",
+    "New York": "https://www.youtube.com/embed/hTbpV1mxQW8",
+    "Tokyo": "https://www.youtube.com/embed/IbRti4qaL3Q",
+}
+yt_url = yt_fallback.get(location, "https://www.youtube.com/embed/dQw4w9WgXcQ")
+st.components.v1.iframe(yt_url, height=400)
 
 st.subheader("📤 Export Saved Records")
 export_option = st.selectbox("Choose export format", ["CSV", "JSON"])
