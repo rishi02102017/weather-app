@@ -53,7 +53,8 @@ with st.expander("ℹ️ About PM Accelerator"):
 
 # MongoDB Connection
 # MONGO_URI = "mongodb+srv://rishikashyap85p:Rishi%4012345@weather-app.1v8n4.mongodb.net/?retryWrites=true&w=majority&appName=weather-app"
-MONGO_URI = "mongodb+srv://rishikashyap85p:Rishi%4012345@weather-app.1v8n4.mongodb.net/?retryWrites=true&w=majority"
+# MONGO_URI = "mongodb+srv://rishikashyap85p:Rishi%4012345@weather-app.1v8n4.mongodb.net/?retryWrites=true&w=majority"
+MONGO_URI = st.secrets["MONGO_URI"]
 
 client = MongoClient(MONGO_URI)
 db = client.weather_db
