@@ -52,7 +52,9 @@ with st.expander("ℹ️ About PM Accelerator"):
     st.write("Product Manager Accelerator helps future PMs gain real-world skills. [LinkedIn Page](https://www.linkedin.com/company/product-manager-accelerator/)")
 
 # MongoDB Connection
-MONGO_URI = "mongodb+srv://rishikashyap85p:Rishi%4012345@weather-app.1v8n4.mongodb.net/?retryWrites=true&w=majority&appName=weather-app"
+# MONGO_URI = "mongodb+srv://rishikashyap85p:Rishi%4012345@weather-app.1v8n4.mongodb.net/?retryWrites=true&w=majority&appName=weather-app"
+MONGO_URI = "mongodb+srv://rishikashyap85p:Rishi%4012345@weather-app.1v8n4.mongodb.net/?retryWrites=true&w=majority"
+
 client = MongoClient(MONGO_URI)
 db = client.weather_db
 collection = db.weather_records
