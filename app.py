@@ -14,7 +14,7 @@ with st.expander("ℹ️ About PM Accelerator"):
 location = st.text_input("Enter location (city, zip, etc.)")
 
 # OpenWeatherMap API
-API_KEY = "YOUR_API_KEY"  
+API_KEY = "c3391e4bbe8586eabbd8576ae5cde133"  
 
 def get_weather(location):
     url = f"https://api.openweathermap.org/data/2.5/weather?q={location}&appid={API_KEY}&units=metric"
