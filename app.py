@@ -140,3 +140,31 @@ if st.button("Run"):
                 st.success("🗑️ Record deleted.")
             else:
                 st.error("No matching record found.")
+
+# --------------- BONUS FEATURES ------------------
+
+st.subheader("📍 Google Maps View")
+if location:
+    map_url = f"https://www.google.com/maps/embed/v1/place?key=AIzaSyCK9bGuJ_aU0zdF8AiTWzAXuG6k5ZqRNUg&q={location}"
+    st.components.v1.iframe(map_url, width=700, height=400)
+
+st.subheader("🎥 YouTube Video About the City")
+yt_query = location + " weather travel"
+yt_embed_url = f"https://www.youtube.com/embed?listType=search&list={yt_query.replace(' ', '%20')}"
+st.components.v1.iframe(yt_embed_url, height=400)
+
+st.subheader("📤 Export Saved Records")
+export_option = st.selectbox("Choose export format", ["CSV", "JSON"])
+if st.button("Export Now"):
+    records = list(collection.find())
+    if records:
+        df = pd.DataFrame(records)
+        df['_id'] = df['_id'].astype(str)
+        if export_option == "CSV":
+            csv = df.to_csv(index=False).encode('utf-8')
+            st.download_button("Download CSV", csv, "weather_data.csv", "text/csv")
+        elif export_option == "JSON":
+            st.download_button("Download JSON", df.to_json(orient="records", indent=2), "weather_data.json", "application/json")
+    else:
+        st.info("No records found to export.")
+
