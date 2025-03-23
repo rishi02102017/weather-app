@@ -108,7 +108,7 @@ streamlit run app.py
 
 ## 👤 Developer
 
-**Name:** Jyotishman Das
-**For:** Product Manager Accelerator Internship Assessment  
+- **Name:** Jyotishman Das
+- **For:** Product Manager Accelerator Internship Assessment  
 
 ---
