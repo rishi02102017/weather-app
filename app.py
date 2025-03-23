@@ -220,6 +220,7 @@ def get_forecast(city):
 # App Config
 st.set_page_config(page_title="Weather App 🌤️", layout="centered")
 st.title("🌦️ Weather + MongoDB CRUD App")
+st.caption("👤 Built by Jyotishman Das")
 st.markdown("Search weather, save it, update or delete records.")
 
 # About PM Accelerator
