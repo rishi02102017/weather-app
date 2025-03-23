@@ -102,7 +102,7 @@ streamlit run app.py
 ---
 
 ## 🎥 Demo Video
-*A screen recording demoing the app usage will be linked here.*
+*Link: https://drive.google.com/file/d/1zScxBIQMhbmouIFS-BcTj417_sPGC7EX/view?usp=sharing*
 
 ---
 
